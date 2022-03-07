@@ -21,5 +21,18 @@ class ApplicationController < Sinatra::Base
   )
   end
 
+  get '/reviews' do
+    Review.all.to_json
+  end 
+
+  post '/reviews' do
+    Review.create(
+      movie_id: params[:movie_id],
+      viewer_id: params[:viewer_id],
+      name: params[:name],
+      review: params[:review]
+    )
+  end
+
 
 end
