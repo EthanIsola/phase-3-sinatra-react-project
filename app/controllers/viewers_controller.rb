@@ -21,6 +21,7 @@ class ViewersController < ApplicationController
         name:params[:name],
         age:params[:age]
       )
+      viewer.to_json
     end
 
     patch '/viewers/:id' do

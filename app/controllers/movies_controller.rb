@@ -20,6 +20,7 @@ class MoviesController < ApplicationController
     producer: params[:producer],
     image_URL: params[:image_URL]
   )
+  movie.to_json
   end
 
   delete '/movies/:id' do
