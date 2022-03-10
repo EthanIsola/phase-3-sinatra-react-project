@@ -18,6 +18,7 @@ class ViewersController < ApplicationController
 
     post '/viewers' do
       viewer = Viewer.create(
+        password:params[:password],
         name:params[:name],
         age:params[:age]
       )
