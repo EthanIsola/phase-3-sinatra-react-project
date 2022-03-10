@@ -6,6 +6,7 @@ puts "🌱 Seeding spices..."
 
 15.times {
   Viewer.create(
+    password: "password",
     name:Faker::Name.name,
     age:rand(10..90)
   )

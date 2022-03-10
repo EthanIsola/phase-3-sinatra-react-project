@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2022_03_07_162432) do
   end
 
   create_table "viewers", force: :cascade do |t|
+    t.string "password"
     t.string "name"
     t.integer "age"
   end
