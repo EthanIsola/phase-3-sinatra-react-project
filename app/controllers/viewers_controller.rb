@@ -4,7 +4,7 @@ class ViewersController < ApplicationController
     get '/viewers' do
       viewer = Viewer.all.order(:age)
       viewer.to_json(
-        only: [:name, :age],
+        only: [:name, :age, :password],
         include: {movies: {only: [:title]},
                 reviews: {only: [:review]}
       }
