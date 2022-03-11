@@ -10,10 +10,16 @@ class ViewersController < ApplicationController
       }
       )
     end
-
-    get '/viewers/:id' do
-      viewer = Viewer.find(params[:id])
+    
+    get '/viewers/:name' do
+      viewer = Viewer.find_by(name: params[:name])
       viewer.to_json
+    end
+
+    get '/viewers/:name/reviews' do
+      viewer = Viewer.find_by(name: params[:name])
+      viewer_reviews = viewer.reviews
+      viewer_reviews.to_json
     end
 
     post '/viewers' do

@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   get '/reviews' do
    review = Review.all.order(:created_at)
    review.to_json(
-     only: [:name, :review,:created_at]
+     only: [:name, :review,:created_at, :id]
    )
   end 
 
